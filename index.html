@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Billy P | Analytics Portfolio</title>
   <style>
     body {
@@ -27,13 +27,25 @@
       border-bottom: 2px solid #D1A827;
       padding-bottom: 0.5rem;
     }
-    h3 {
-      color: #2F5D50;
+    .category {
+      cursor: pointer;
+      background-color: #D1A827;
+      padding: 0.75rem;
+      margin-top: 1rem;
+      color: #fff;
+      border-radius: 5px;
+    }
+    .category:hover {
+      background-color: #b8961e;
+    }
+    .project-list {
+      display: none;
+      margin-top: 0.5rem;
     }
     .project {
       background: white;
       padding: 1rem;
-      margin-bottom: 1rem;
+      margin: 0.5rem 0;
       border-radius: 8px;
       box-shadow: 0 0 5px rgba(0,0,0,0.1);
     }
@@ -54,63 +66,70 @@
 
   <header>
     <h1>Billy P</h1>
-    <p>Data Analyst | Machine Learning Enthusiast | Storyteller with Data</p>
+    <p>Data Analyst | Analytics Enthusiast | Storyteller with Data</p>
   </header>
 
   <section>
     <h2>About Me</h2>
     <p>
-      I am data analyst who just loves analytics. What I share with you today are projects that I have worked on during my free time. The goal is to demonstrate my abilities and skills in areas that I am most interested in. 
+      I am a data analyst who just loves analytics. What I share with you today are projects that I have worked on during my free time. The goal is to demonstrate my abilities and skills in areas that I am most interested in.
     </p>
   </section>
 
   <section>
     <h2>Projects</h2>
 
-    <!-- Dashboards -->
-    <h3>Dashboards</h3>
-    <div class="project">
-      <h4>Montreal Crime</h4>
-      <p>Using public data from Montreal, I built a dashboard to gain insight on crime trends. </p>
-      <p><strong>Tools:</strong> Tableau</p>
-      <a href="https://public.tableau.com/app/profile/billy1723/viz/CrimesinMontreal_17044031802300/Dashboard1" target="_blank">View Project</a>
+    <!-- Dashboards Category -->
+    <div class="category" onclick="toggleCategory('dashboards')">Dashboards</div>
+    <div class="project-list" id="dashboards">
+      <div class="project">
+        <h4>Montreal Crime</h4>
+        <p>Using public data from Montreal, I built a dashboard to gain insight on crime trends.</p>
+        <p><strong>Tools:</strong> Tableau</p>
+        <a href="https://public.tableau.com/app/profile/billy1723/viz/CrimesinMontreal_17044031802300/Dashboard1" target="_blank">View Project</a>
+      </div>
     </div>
 
-    <!-- Machine Learning -->
-    <h3>Machine Learning</h3>
-    <div class="project">
-      <h4>Bitcoin Price Forecast using Random Forest</h4>
-      <p>Inspired by a research paper conducted by two researchers, I attempted to replicate their model using their top 6 important features.  </p>
-      <p><strong>Tools:</strong> Python, Scikit-learn</p>
-      <a href="https://github.com/BP1294/BTC-Price-Prediction" target="_blank">View Project</a>
+    <!-- Machine Learning Category -->
+    <div class="category" onclick="toggleCategory('ml')">Machine Learning</div>
+    <div class="project-list" id="ml">
+      <div class="project">
+        <h4>Bitcoin Price Forecast using Random Forest</h4>
+        <p>Inspired by a research paper conducted by two researchers, I attempted to replicate their model using their top 6 important features.</p>
+        <p><strong>Tools:</strong> Python, Scikit-learn</p>
+        <a href="https://github.com/BP1294/BTC-Price-Prediction" target="_blank">View Project</a>
+      </div>
     </div>
 
-    <!-- Simulation -->
-    <h3>Simulation</h3>
-    <div class="project">
-      <h4>Stake: Dice</h4>
-      <p>Is there a way to win online casinos? After spending some time evaluating expected values through various games, I became intrigued by the game, dice.
-        Unfortunately, house will always have the upper hand but the results from the simulation took me by surprise. </p>
-      <p><strong>Tools:</strong> Python</p>
-      <a href="https://github.com/BP1294/Dice" target="_blank">View Project</a>
+    <!-- Simulation Category -->
+    <div class="category" onclick="toggleCategory('simulation')">Simulation</div>
+    <div class="project-list" id="simulation">
+      <div class="project">
+        <h4>Stake: Dice</h4>
+        <p>Is there a way to win online casinos? I became intrigued by the game Dice. Unfortunately, the house always has the edge — but the results from the simulation took me by surprise.</p>
+        <p><strong>Tools:</strong> Python</p>
+        <a href="https://github.com/BP1294/Dice" target="_blank">View Project</a>
+      </div>
     </div>
-    <!-- Add more categories below -->
-    <!--
-    <h3>📈 Forecasting</h3>
-    <div class="project">...</div>
-    -->
   </section>
 
   <section>
     <h2>Contact</h2>
     <p><a href="https://www.linkedin.com/in/billy-p-a0679814a/" target="_blank">LinkedIn</a></p>
     <p>Email: b.phongsavath94@gmail.com</p>
-    <p>GitHub: <a href="https://github.com/yourusername" target="_blank">BP1294</a></p>
+    <p>GitHub: <a href="https://github.com/BP1294" target="_blank">BP1294</a></p>
   </section>
 
   <footer>
     &copy; 2025 Billy P. All rights reserved.
   </footer>
+
+  <script>
+    function toggleCategory(id) {
+      const section = document.getElementById(id);
+      section.style.display = section.style.display === 'block' ? 'none' : 'block';
+    }
+  </script>
 
 </body>
 </html>
